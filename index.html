@@ -414,6 +414,83 @@
             left: 100%;
         }
 
+        /* Video Proof Section */
+        .video-proof {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+        
+        .video-container {
+            flex: 1;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+            border: 2px solid var(--neon-blue);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-description {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .video-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(157, 0, 255, 0.5);
+        }
+        
+        .video-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        
+        .video-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .video-stat {
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 150px;
+        }
+        
+        .video-stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-blue);
+            margin-bottom: 5px;
+        }
+        
+        .video-stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
         /* Pricing Section */
         .pricing {
             background: rgba(5, 5, 16, 0.5);
@@ -1351,6 +1428,10 @@
             .signal-display {
                 font-size: 3rem;
             }
+            
+            .video-title {
+                font-size: 1.6rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1393,6 +1474,24 @@
             .account-actions {
                 grid-template-columns: 1fr;
             }
+            
+            .video-proof {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .video-title {
+                font-size: 1.4rem;
+            }
+            
+            .video-stat {
+                min-width: 120px;
+                padding: 10px;
+            }
+            
+            .video-stat-value {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1427,6 +1526,22 @@
             
             .modal-content {
                 padding: 20px 15px;
+            }
+            
+            .video-title {
+                font-size: 1.2rem;
+            }
+            
+            .video-text {
+                font-size: 0.9rem;
+            }
+            
+            .video-stats {
+                gap: 10px;
+            }
+            
+            .video-stat {
+                min-width: calc(50% - 10px);
             }
         }
     </style>
@@ -1505,6 +1620,34 @@
             <!-- Анімаційні елементи -->
             <div style="position: absolute; top: 20%; left: 10%; width: 10px; height: 10px; background: var(--neon-blue); border-radius: 50%; box-shadow: 0 0 20px var(--neon-blue); animation: float 4s ease-in-out infinite 0.5s;"></div>
             <div style="position: absolute; top: 70%; right: 15%; width: 15px; height: 15px; background: var(--neon-purple); border-radius: 50%; box-shadow: 0 0 25px var(--neon-purple); animation: float 5s ease-in-out infinite 1s;"></div>
+            
+            <!-- Нова секція з відео-доказом -->
+            <div class="video-proof">
+                <div class="video-container">
+                    <video controls poster="preview.jpg">
+                        <source src="videorab.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відео тег.
+                    </video>
+                </div>
+                <div class="video-description">
+                    <h3 class="video-title" id="videoTitle">ВІДЕО ДОКАЗ РОБОТИ СОФТУ</h3>
+                    <p class="video-text" id="videoText">Перегляньте реальну роботу нашого алгоритму в дії. Відео демонструє, як система точно прогнозує коефіцієнти у грі Lucky Jet. Наш AI аналізує історичні дані та визначає оптимальні моменти для ставок.</p>
+                    <div class="video-stats">
+                        <div class="video-stat">
+                            <div class="video-stat-value">97.83%</div>
+                            <div class="video-stat-label" id="accuracyLabel">Точність</div>
+                        </div>
+                        <div class="video-stat">
+                            <div class="video-stat-value">24/7</div>
+                            <div class="video-stat-label" id="supportLabel">Підтримка</div>
+                        </div>
+                        <div class="video-stat">
+                            <div class="video-stat-value">1000+</div>
+                            <div class="video-stat-label" id="usersLabel">Користувачів</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Pricing Section -->
@@ -1723,7 +1866,7 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-value">Email</div>
-                        <div class="stat-label">best.legend.olexander01@gmail.com</div>
+                        <div class="stat-label">support@luckyjetai.com</div>
                     </div>
                 </div>
                 
@@ -1843,7 +1986,7 @@
             <a href="#" class="footer-link" id="footerContactsLink">Контакти</a>
             <a href="https://t.me/Lucky_Jet_AiSignal" class="footer-link">Telegram</a>
         </div>
-        <p class="copyright">© 2025 Predictor Lucky Jet AI. Усі права захищені.</p>
+        <p class="copyright">© 2023 Predictor Lucky Jet AI. Усі права захищені.</p>
     </footer>
 
     <!-- Modals -->
@@ -1908,14 +2051,19 @@
                 upgrade: "Оновити тариф",
                 noPlan: "У вас немає активного тарифу. Будь ласка, придбайте тариф для отримання сигналів.",
                 buyPlan: "Придбати тариф",
-                copyright: "© 2025 Predictor Lucky Jet AI. Усі права захищені.",
+                copyright: "© 2023 Predictor Lucky Jet AI. Усі права захищені.",
                 adminTitle: "АДМІН ПАНЕЛЬ",
                 userEmail: "Email користувача",
                 planType: "Тип тарифу",
                 grantAccess: "Надати доступ",
                 emailNotFound: "Пошта не знайдена",
                 accessGranted: "Доступ надано успішно",
-                daysLeft: "днів залишилось"
+                daysLeft: "днів залишилось",
+                videoTitle: "ВІДЕО ДОКАЗ РОБОТИ СОФТУ",
+                videoText: "Перегляньте реальну роботу нашого алгоритму в дії. Відео демонструє, як система точно прогнозує коефіцієнти у грі Lucky Jet. Наш AI аналізує історичні дані та визначає оптимальні моменти для ставок.",
+                accuracy: "Точність",
+                support: "Підтримка",
+                users: "Користувачів"
             },
             ru: {
                 home: "Главная",
@@ -1944,14 +2092,19 @@
                 upgrade: "Обновить тариф",
                 noPlan: "У вас нет активного тарифа. Пожалуйста, приобретите тариф для получения сигналов.",
                 buyPlan: "Приобрести тариф",
-                copyright: "© 2025 Predictor Lucky Jet AI. Все права защищены.",
+                copyright: "© 2023 Predictor Lucky Jet AI. Все права защищены.",
                 adminTitle: "АДМИН ПАНЕЛЬ",
                 userEmail: "Email пользователя",
                 planType: "Тип тарифа",
                 grantAccess: "Предоставить доступ",
                 emailNotFound: "Email не найден",
                 accessGranted: "Доступ предоставлен успешно",
-                daysLeft: "дней осталось"
+                daysLeft: "дней осталось",
+                videoTitle: "ВИДЕО ДОКАЗАТЕЛЬСТВО РАБОТЫ СОФТА",
+                videoText: "Посмотрите реальную работу нашего алгоритма в действии. Видео демонстрирует, как система точно прогнозирует коэффициенты в игре Lucky Jet. Наш AI анализирует исторические данные и определяет оптимальные моменты для ставок.",
+                accuracy: "Точность",
+                support: "Поддержка",
+                users: "Пользователей"
             },
             en: {
                 home: "Home",
@@ -1980,14 +2133,19 @@
                 upgrade: "Upgrade Plan",
                 noPlan: "You don't have an active plan. Please purchase a plan to get signals.",
                 buyPlan: "Buy Plan",
-                copyright: "© 2025 Predictor Lucky Jet AI. All rights reserved.",
+                copyright: "© 2023 Predictor Lucky Jet AI. All rights reserved.",
                 adminTitle: "ADMIN PANEL",
                 userEmail: "User Email",
                 planType: "Plan Type",
                 grantAccess: "Grant Access",
                 emailNotFound: "Email not found",
                 accessGranted: "Access granted successfully",
-                daysLeft: "days left"
+                daysLeft: "days left",
+                videoTitle: "SOFTWARE PROOF VIDEO",
+                videoText: "Watch our algorithm in action. The video demonstrates how the system accurately predicts coefficients in the Lucky Jet game. Our AI analyzes historical data and determines the optimal moments for bets.",
+                accuracy: "Accuracy",
+                support: "Support",
+                users: "Users"
             }
         };
 
@@ -2073,6 +2231,13 @@
             
             // Footer
             document.querySelector('.copyright').textContent = lang.copyright;
+            
+            // Video section
+            document.getElementById('videoTitle').textContent = lang.videoTitle;
+            document.getElementById('videoText').textContent = lang.videoText;
+            document.getElementById('accuracyLabel').textContent = lang.accuracy;
+            document.getElementById('supportLabel').textContent = lang.support;
+            document.getElementById('usersLabel').textContent = lang.users;
         }
 
         // Preloader
@@ -2462,11 +2627,11 @@
 
         // Signals
         const signals = [
-            { value: 6.48, color: 'purple' },
-            { value: 5.35, color: 'purple' },
-            { value: 4.60, color: 'purple' },
-            { value: 1.11, color: 'blue' },
-            { value: 12.60, color: 'gold' },
+            { value: 4.37, color: 'purple' },
+            { value: 7.38, color: 'purple' },
+            { value: 1.38, color: 'blue' },
+            { value: 9.02, color: 'purple' },
+            { value: 3.00, color: 'purple' },
             { value: 2.11, color: 'purple' },
             { value: 117.21, color: 'gold' },
             { value: 1.04, color: 'blue' },
